@@ -1,3 +1,9 @@
+
+![Sample image](https://github.com/c0ded-human/bugbounty/blob/main/find-reflected-Xss/sample.png)
+
+
+
+
 ## Summary:
 
 This script is a simple website scanner that checks whether a list of URLs or a single URL contains a specified string. If a URL is found to contain the string, the script prints a message saying "found" and the URL. If a URL does not contain the string, the script prints a message saying "fail" and the URL. The script also provides the option to save the results to an output file and to only show positive results.
