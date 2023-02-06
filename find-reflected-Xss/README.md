@@ -27,7 +27,7 @@ This script is used from the command line and has the following options:
 
 ```$ cat dummy-site.txt | qsreplace 'fuzzme' | grep 'fuzzme' | sort -u > Urls-to-test.txt```
 
-```$ python3 ufo.py -uf Urls-to-test.txt -mc "check string" -o reflected-parameters.txt -p```
+```$ python3 ufo.py -uf Urls-to-test.txt -mc "fuzzme" -o reflected-parameters.txt -p```
 
 In the above example, the script will check the URLs in the file "Urls-to-test.txt" for the string "fuzzme". The results will be saved to the file "reflected-parameters.txt" and only positive results will be shown.
 
