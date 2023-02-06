@@ -1,8 +1,15 @@
-Summary:
+## Summary:
 
 This script is a simple website scanner that checks whether a list of URLs or a single URL contains a specified string. If a URL is found to contain the string, the script prints a message saying "found" and the URL. If a URL does not contain the string, the script prints a message saying "fail" and the URL. The script also provides the option to save the results to an output file and to only show positive results.
 
-Usage:
+## Requirements
+* Python 3.x
+* requests library
+* colorama library
+* re library 
+
+`` pip install re colorama requests  ``
+## Usage:
 
 This script is used from the command line and has the following options:
 
@@ -16,15 +23,28 @@ This script is used from the command line and has the following options:
 
 -p/--positive: Only show positive results (URLs that contain the check_string).
 
-Example:
+### Example:
 
-> cat dummy-site.txt | qsreplace 'fuzzme' | grep 'fuzzme' | sort -u > Urls-to-test.txt
-> python script.py -uf Urls-to-test.txt -mc "check string" -o reflected-parameters.txt -p
+```$ cat dummy-site.txt | qsreplace 'fuzzme' | grep 'fuzzme' | sort -u > Urls-to-test.txt```
 
-In the above example, the script will check the URLs in the file "urls.txt" for the string "check string". The results will be saved to the file "output.txt" and only positive results will be shown.
+```$ python3 ufo.py -uf Urls-to-test.txt -mc "check string" -o reflected-parameters.txt -p```
 
-Note: The qsreplace command mentioned in the prompt is not related to this script and is not used in this script.
+In the above example, the script will check the URLs in the file "Urls-to-test.txt" for the string "fuzzme". The results will be saved to the file "reflected-parameters.txt" and only positive results will be shown.
 
+** Note: The qsreplace command mentioned in the prompt is not related to this script and is not used in this script. **
+
+## Here is some advance usage:
+
+1. ```$ cat dummy-site.txt | qsreplace '</fuzzme>' | tee -a xss-1.txt```
+
+   ```$ python3 ufo.py -uf xss-1.txt-mc "</fuzzme>" -p```
+   
+2. ```$ cat dummy-site.txt | qsreplace '1%3C1%2Ffuzz%3E1' | tee -a xss-1.txt```
+     
+     ```$ python3 ufo.py -uf xss-1.txt-mc "1<1/fuzz>1" -p```
+
+
+### The script was developed by a developer/security-researcher named +-+ c0ded-human 
 
 
 
