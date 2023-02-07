@@ -1,3 +1,7 @@
+## New Updates:
+1."-fr", "--follow_redirect", help="follow redirections if specified.
+
+2."-ne", "--no_error", help="don't show error messages.
 
 ![Sample image](https://github.com/c0ded-human/bugbounty/blob/main/find-reflected-Xss/sample.png)
 
