@@ -1,10 +1,11 @@
 ## New Updates:
-1."-fr", "--follow_redirect", help="follow redirections if specified.
+1. -fr/--follow_redirect: follow redirections if specified.
 
-2."-ne", "--no_error", help="don't show error messages.
+2. -ne/--no_error: Don't show error messages.
+
+3. Filtered and clean Output file format.
 
 ![Sample image](https://github.com/c0ded-human/bugbounty/blob/main/find-reflected-Xss/sample.png)
-
 
 
 
@@ -33,11 +34,15 @@ This script is used from the command line and has the following options:
 
 -p/--positive: Only show positive results (URLs that contain the check_string).
 
+-fr/--follow_redirect: follow redirections if specified.
+
+-ne/--no_error: Don't show error messages.
+
 ### Example:
 
 ```$ cat dummy-site.txt | qsreplace 'fuzzme' | grep 'fuzzme' | sort -u > Urls-to-test.txt```
 
-```$ python3 ufo.py -uf Urls-to-test.txt -mc "fuzzme" -o reflected-parameters.txt -p```
+```$ python3 ufo.py -p -se -uf Urls-to-test.txt -mc "fuzzme" -o reflected-parameters.txt```
 
 In the above example, the script will check the URLs in the file "Urls-to-test.txt" for the string "fuzzme". The results will be saved to the file "reflected-parameters.txt" and only positive results will be shown.
 
@@ -47,11 +52,11 @@ In the above example, the script will check the URLs in the file "Urls-to-test.t
 
 1. ```$ cat dummy-site.txt | qsreplace '</fuzzme>' | tee -a xss-1.txt```
 
-   ```$ python3 ufo.py -uf xss-1.txt-mc "</fuzzme>" -p```
+   ```$ python3 ufo.py -p -se -uf xss-1.txt-mc "</fuzzme>" -o result.txt```
    
 2. ```$ cat dummy-site.txt | qsreplace '1%3C1%2Ffuzz%3E1' | tee -a xss-1.txt```
      
-     ```$ python3 ufo.py -uf xss-1.txt-mc "1<1/fuzz>1" -p```
+   ```$ python3 ufo.py -p -se -uf xss-1.txt-mc "1<1/fuzz>1" -o result.txt```
 
 
 ### The script was developed by a developer/security-researcher named +-+ c0ded-human 
