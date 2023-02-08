@@ -1,4 +1,4 @@
-## New Updates:
+## 7 Feb, 2023 Updates:
 1. -fr/--follow_redirect: follow redirections if specified.
 
 2. -ne/--no_error: Don't show error messages.
@@ -59,7 +59,7 @@ In the above example, the script will check the URLs in the file "Urls-to-test.t
    ```$ python3 ufo.py -p -se -uf xss-1.txt-mc "1<1/fuzz>1" -o result.txt```
 
 
-### The script was developed by a developer/security-researcher named +-+ c0ded-human 
+### The script was developed by a developer/security-researcher named c0ded-human 
 
 
 
