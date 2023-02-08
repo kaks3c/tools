@@ -17,9 +17,9 @@ This script is a simple website scanner that checks whether a list of URLs or a 
 * Python 3.x
 * requests library
 * colorama library
-* re library 
+* re library(pre-installed)
 
-`` pip install re colorama requests  ``
+`` pip install colorama requests  ``
 ## Usage:
 
 This script is used from the command line and has the following options:
