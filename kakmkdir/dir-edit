@@ -1,8 +1,0 @@
-# Function to create the directory structure
-create_directory_structure() {
-    mkdir -p "$1/$2-recon/domains/subdomains/ips/json-data"
-    mkdir -p "$1/$2-recon/asn/cidr"
-    mkdir -p "$1/$2-recon/urls/js-files"
-    mkdir -p "$1/$2-recon/vunls"
-    mkdir -p "$1/$2-recon/temp-files"
-}
